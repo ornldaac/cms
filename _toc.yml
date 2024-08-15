@@ -7,7 +7,9 @@ parts:
   - caption: Prerequisites
     numbered: false
     chapters:
-    - file: prerequisites
+    - file: prerequisites/earthdatalogin.md
+    - file: prerequisites/pythonmodules.md
+    - file: prerequisites/compute.md
 #
   - caption: Search & Discovery
     numbered: false
@@ -24,3 +26,8 @@ parts:
     chapters:
     - file: tutorials/gedi
     - file: tutorials/icesat2
+#
+  - caption: Resources
+    numbered: false
+    chapters:
+    - file: resources
