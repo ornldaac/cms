@@ -1,0 +1,26 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Prerequisites
+    numbered: false
+    chapters:
+    - file: prerequisites
+#
+  - caption: Search & Discovery
+    numbered: false
+    chapters:
+    - file: tutorials/search
+#
+  - caption: Data Access Methods
+    numbered: false
+    chapters:
+    - file: tutorials/access_lidar
+#
+  - caption: Data Integration
+    numbered: false
+    chapters:
+    - file: tutorials/gedi
+    - file: tutorials/icesat2

@@ -1,0 +1,923 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Discover CMS Datasets &#8212; NASA Carbon Monitoring System (CMS) Data Tutorials</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/search';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Access CMS LiDAR data" href="access_lidar.html" />
+    <link rel="prev" title="Requirements" href="../prerequisites.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ornldaac.png" class="logo__image only-light" alt="NASA Carbon Monitoring System (CMS) Data Tutorials - Home"/>
+    <script>document.write(`<img src="../_static/ornldaac.png" class="logo__image only-dark" alt="NASA Carbon Monitoring System (CMS) Data Tutorials - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    NASA Carbon Monitoring System Data Tutorials
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisites</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../prerequisites.html">Requirements</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Search &amp; Discovery</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Discover CMS Datasets</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Access Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="access_lidar.html">Access CMS LiDAR data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="gedi.html">GEDI Aboveground Biomass</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="icesat2.html">ICESAT-2 ATL08 Canopy Height</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/main?urlpath=lab/tree/docs/tutorials/search.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/main/docs/tutorials/search.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftutorials/search.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/tutorials/search.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Discover CMS Datasets</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-datasets-by-project">Search datasets by project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-extent-of-datasets">Spatial extent of datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets-by-daacs">Datasets by DAACs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets-publication-dates">Datasets publication dates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets-granule-count">Datasets granule count</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instrument-keywords-of-the-dataset">Instrument keywords of the dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-by-keyword">Search by keyword</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-by-bounding-box">Search by bounding box</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="discover-cms-datasets">
+<h1>Discover CMS Datasets<a class="headerlink" href="#discover-cms-datasets" title="Link to this heading">#</a></h1>
+<div class="admonition-learning-objectives admonition">
+<p class="admonition-title">Learning Objectives</p>
+<ul class="simple">
+<li><p>Learn how to search NASA earth data collections programatically in Python</p></li>
+<li><p>Learn how to restrict search results by space (study area) and time (project period).</p></li>
+<li><p>Plot data extent/boundaries in a map</p></li>
+<li><p>Download data files of interest.</p></li>
+</ul>
+</div>
+<p>In this tutorial, we will use <code class="docutils literal notranslate"><span class="pre">earthaccess</span></code> Python module to search for CMS datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">earthaccess</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">box</span>
+<span class="kn">from</span> <span class="nn">geodatasets</span> <span class="kn">import</span> <span class="n">get_path</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">from</span> <span class="nn">wordcloud</span> <span class="kn">import</span> <span class="n">WordCloud</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="search-datasets-by-project">
+<h2>Search datasets by project<a class="headerlink" href="#search-datasets-by-project" title="Link to this heading">#</a></h2>
+<p>Let’s use <code class="docutils literal notranslate"><span class="pre">earthaccess</span></code> module’s <a class="reference external" href="https://earthaccess.readthedocs.io/en/latest/user-reference/api/api/#earthaccess.api.search_datasets">search_datasets API</a> to search for datasets published under the CMS project. <code class="docutils literal notranslate"><span class="pre">search_datasets</span></code> will return a list DataCollection from <a class="reference external" href="https://cmr.earthdata.nasa.gov/search/site/docs/search/api.html">NASA’s Common Metadata Repository (CMR) API</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datasets</span> <span class="o">=</span> <span class="n">earthaccess</span><span class="o">.</span><span class="n">search_datasets</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="s2">&quot;CMS&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Datasets found: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">datasets</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total Datasets found: 168
+</pre></div>
+</div>
+</div>
+</div>
+<p>First convert the above search results into a pandas dataframe. Converting to a pandas dataframe will streamline the query of the dataset search results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">convert_list_gdf</span><span class="p">(</span><span class="n">datag</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;converts List[] to geopandas dataframe&quot;&quot;&quot;</span>
+    <span class="c1"># create pandas dataframe from json</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">json_normalize</span><span class="p">([</span><span class="nb">vars</span><span class="p">(</span><span class="n">granule</span><span class="p">)[</span><span class="s1">&#39;render_dict&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">granule</span> <span class="ow">in</span> <span class="n">datag</span><span class="p">])</span>
+    <span class="c1"># keep only last string of the column names</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">df</span>
+    
+<span class="n">df</span> <span class="o">=</span> <span class="n">convert_list_gdf</span><span class="p">(</span><span class="n">datasets</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="spatial-extent-of-datasets">
+<h2>Spatial extent of datasets<a class="headerlink" href="#spatial-extent-of-datasets" title="Link to this heading">#</a></h2>
+<p>NASA’s CMR also stores the bounding coordinates of the data collections. Now, let’s convert the pandas dataframe <code class="docutils literal notranslate"><span class="pre">df</span></code> we created above into a geopandas dataframe and plot the bounding box of each data collection.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">convert_umm_bbox</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;converts UMM bounding rectangles&quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">box</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;WestBoundingCoordinate&#39;</span><span class="p">],</span> 
+              <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;SouthBoundingCoordinate&#39;</span><span class="p">],</span>
+              <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;EastBoundingCoordinate&#39;</span><span class="p">],</span> 
+              <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;NorthBoundingCoordinate&#39;</span><span class="p">])</span>
+    <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+        
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;BoundingRectangles&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">convert_umm_bbox</span><span class="p">)</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="s2">&quot;geometry&quot;</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
+<span class="n">world</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">get_path</span><span class="p">(</span><span class="s1">&#39;naturalearth.land&#39;</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">boundary</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spatial extent of CMS datasets&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0ded96a1779020e31a2153cacb547ecfd7664b3398261c025fc7f541d3764eeb.png" src="../_images/0ded96a1779020e31a2153cacb547ecfd7664b3398261c025fc7f541d3764eeb.png" />
+</div>
+</div>
+<p>As we see above, there are more CMS datasets available over North America than other parts of the world. Some datasets have global coverage as well.</p>
+</section>
+<section id="datasets-by-daacs">
+<h2>Datasets by DAACs<a class="headerlink" href="#datasets-by-daacs" title="Link to this heading">#</a></h2>
+<p>There is a <code class="docutils literal notranslate"><span class="pre">provider-id</span></code> tag in the CMR metadata, which provides information on the DAAC responsible for archiving the datasets. CMR datasets are archived by the ORNL DAAC (<code class="docutils literal notranslate"><span class="pre">ORNL_CLOUD</span></code>) as well as by the GES DISC (<code class="docutils literal notranslate"><span class="pre">GES_DISC</span></code>). Let compute how many of the total datasets are archived by each DAACs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;provider-id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%1.1f%%</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribution of CMS datasets across DAACs&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/41b1c7d11ca1427b58797047e478b44fe1b285bae069ae5a5aaeb7970878d0bd.png" src="../_images/41b1c7d11ca1427b58797047e478b44fe1b285bae069ae5a5aaeb7970878d0bd.png" />
+</div>
+</div>
+<p>The ORNL DAAC counts for ~73% of the total CMS datasets publication.</p>
+</section>
+<section id="datasets-publication-dates">
+<h2>Datasets publication dates<a class="headerlink" href="#datasets-publication-dates" title="Link to this heading">#</a></h2>
+<p>NASA has published CMS datasets starting 2014. The following chart shows the number of CMS datasets published by year.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_releasedates</span><span class="p">(</span><span class="n">ddates</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;get data release dates&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">ddates</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">reldate</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;ReleaseDate&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">year</span>
+        <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">reldate</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;(\d</span><span class="si">{4}</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;OtherCitationDetails&#39;</span><span class="p">]</span> <span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">reldate</span>
+    
+<span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;pub_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;CollectionCitations&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_releasedates</span><span class="p">)</span>
+<span class="n">gdf</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;pub_date&#39;</span><span class="p">,</span> <span class="s1">&#39;provider-id&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of Datasets published&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;CMS Dataset Publication by Year&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ca2495f3f1a66004678f49e1e098b8228e93a47087a42a0830c4617412ccdd8c.png" src="../_images/ca2495f3f1a66004678f49e1e098b8228e93a47087a42a0830c4617412ccdd8c.png" />
+</div>
+</div>
+<p>As we see in the above chart, the CMS datasets is still being actively produced and published.</p>
+</section>
+<section id="datasets-granule-count">
+<h2>Datasets granule count<a class="headerlink" href="#datasets-granule-count" title="Link to this heading">#</a></h2>
+<p>Let’s plot some statistics of how many granules (or data files) are in each data collection.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;granule-count&#39;</span><span class="p">],</span> <span class="n">by</span><span class="o">=</span><span class="s1">&#39;provider-id&#39;</span><span class="p">,</span> <span class="n">meanline</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">showmeans</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of Granules&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Number of Granules by Datasets&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0a42228296f208a242db96299fce69912e504ff34235ced7b4f8b20a979bc808.png" src="../_images/0a42228296f208a242db96299fce69912e504ff34235ced7b4f8b20a979bc808.png" />
+</div>
+</div>
+<p>As we see above, there are few data collections that have more than 100,000 granules. However, most collections have much fewer granules.</p>
+<p>Let’s print the dataset with the largest number of granules.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># increase the max column width of pandas dataframe</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">max_colwidth</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">gdf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;granule-count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()][[</span><span class="s1">&#39;EntryTitle&#39;</span><span class="p">,</span> <span class="s1">&#39;DOI&#39;</span><span class="p">,</span> <span class="s1">&#39;granule-count&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EntryTitle       LiDAR Surveys over Selected Forest Research Sites, Brazilian Amazon, 2008-2018
+DOI                                                                       10.3334/ORNLDAAC/1644
+granule-count                                                                              3154
+Name: 2, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="instrument-keywords-of-the-dataset">
+<h2>Instrument keywords of the dataset<a class="headerlink" href="#instrument-keywords-of-the-dataset" title="Link to this heading">#</a></h2>
+<p>The CMR metadata of the data collection includes <a class="reference external" href="https://www.earthdata.nasa.gov/learn/find-data/idn/gcmd-keywords">GCMD keywords</a>, which provides information such as science variable, instruments and platforms of the data collections. Let’s plot a word cloud of the GCMD Instrument keywords. This will give indication of what instruments were used to collect CMS datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_keywords</span><span class="p">(</span><span class="n">keywords</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;get data release dates&quot;&quot;&quot;</span>
+    <span class="n">keys</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="s1">&#39;Instruments&#39;</span> <span class="ow">in</span> <span class="n">keywords</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">instr</span> <span class="ow">in</span> <span class="n">keywords</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;Instruments&#39;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="s1">&#39;LongName&#39;</span> <span class="ow">in</span> <span class="n">instr</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">keys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">instr</span><span class="p">[</span><span class="s1">&#39;LongName&#39;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">keys</span>
+
+<span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;gcmd_keys&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;Platforms&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_keywords</span><span class="p">)</span>
+<span class="n">gmcd_var</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;gcmd_keys&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">explode</span><span class="p">()</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="n">gmcd_var</span> <span class="o">=</span>  <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">gmcd_var</span> <span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="n">x</span><span class="p">]</span>
+<span class="n">gmcd_var_dict</span><span class="o">=</span><span class="n">Counter</span><span class="p">(</span><span class="n">gmcd_var</span><span class="p">)</span>
+<span class="n">wordcloud</span> <span class="o">=</span> <span class="n">WordCloud</span><span class="p">(</span><span class="n">background_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> 
+                      <span class="n">width</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> 
+                      <span class="n">height</span> <span class="o">=</span> <span class="mi">500</span><span class="p">)</span><span class="o">.</span><span class="n">generate_from_frequencies</span><span class="p">(</span><span class="n">gmcd_var_dict</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">wordcloud</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;A Word Cloud of Instruments Keywords for CMS Datasets&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/5307ec65299bde62eafc3535e08c334b4abc9fee339cb81bcbcd948d597fce77.png" src="../_images/5307ec65299bde62eafc3535e08c334b4abc9fee339cb81bcbcd948d597fce77.png" />
+</div>
+</div>
+<p>As we see in the above word cloud, lidar (light detection and ranging) is one of the most used instrument keyword for the CMS data collections.</p>
+</section>
+<section id="search-by-keyword">
+<h2>Search by keyword<a class="headerlink" href="#search-by-keyword" title="Link to this heading">#</a></h2>
+<p>Lets search for all CMS datasets that has keyword “lidar” on their GCMD keyword metadata.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datasets</span> <span class="o">=</span> <span class="n">earthaccess</span><span class="o">.</span><span class="n">search_datasets</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="s2">&quot;CMS&quot;</span><span class="p">,</span> <span class="n">keyword</span><span class="o">=</span><span class="s2">&quot;lidar&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total CMS Datasets with lidar keyword: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">datasets</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total CMS Datasets with lidar keyword: 32
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="search-by-bounding-box">
+<h2>Search by bounding box<a class="headerlink" href="#search-by-bounding-box" title="Link to this heading">#</a></h2>
+<p>We can also limit the search results for one area. Let’s use the bounds of Brazil to only search for CMS datasets with “lidar” keyword.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Brazil bounding box</span>
+<span class="n">bound</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">73.99</span><span class="p">,</span> <span class="o">-</span><span class="mf">33.77</span><span class="p">,</span> <span class="o">-</span><span class="mf">34.73</span><span class="p">,</span> <span class="mf">5.25</span><span class="p">)</span> 
+<span class="n">datasets</span> <span class="o">=</span> <span class="n">earthaccess</span><span class="o">.</span><span class="n">search_datasets</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="s2">&quot;CMS&quot;</span><span class="p">,</span> <span class="n">keyword</span><span class="o">=</span><span class="s2">&quot;lidar&quot;</span><span class="p">,</span>
+                                       <span class="n">bounding_box</span> <span class="o">=</span> <span class="n">bound</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total CMS Datasets within Brazil: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">datasets</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total CMS Datasets within Brazil: 8
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can plot the bounding boxes of the CMS data collections over Brazil.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">convert_list_gdf</span><span class="p">(</span><span class="n">datasets</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;BoundingRectangles&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">convert_umm_bbox</span><span class="p">)</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="s2">&quot;geometry&quot;</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
+<span class="n">world</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">get_path</span><span class="p">(</span><span class="s1">&#39;naturalearth.land&#39;</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">boundary</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;CMS datasets in Brazil with Lidar Keyword&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3ce651a82245b550228948d8768a8d18550f57007477fba968e6f02c2ff1aec7.png" src="../_images/3ce651a82245b550228948d8768a8d18550f57007477fba968e6f02c2ff1aec7.png" />
+</div>
+</div>
+<p>We now print the data title, short name and DOI of the CMS datasets in Brazil with “lidar” keyword.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hyperlink_doi</span><span class="p">(</span><span class="n">doi</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;make doi link&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;&lt;a target=&quot;_blank&quot; href=&quot;https://doi.org/</span><span class="si">{</span><span class="n">doi</span><span class="si">}</span><span class="s1">&quot;&gt;</span><span class="si">{</span><span class="n">doi</span><span class="si">}</span><span class="s1">&lt;/a&gt;&#39;</span>
+
+<span class="c1"># print dataset title and doi    </span>
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;EntryTitle&#39;</span><span class="p">,</span> <span class="s1">&#39;DOI&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">format</span><span class="p">({</span><span class="s1">&#39;DOI&#39;</span><span class="p">:</span> <span class="n">hyperlink_doi</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_39779">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_39779_level0_col0" class="col_heading level0 col0" >EntryTitle</th>
+      <th id="T_39779_level0_col1" class="col_heading level0 col1" >DOI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_39779_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_39779_row0_col0" class="data row0 col0" >CMS: LiDAR Data for Forested Areas in Paragominas, Para, Brazil, 2012-2014</td>
+      <td id="T_39779_row0_col1" class="data row0 col1" ><a target="_blank" href="https://doi.org/10.3334/ORNLDAAC/1302">10.3334/ORNLDAAC/1302</a></td>
+    </tr>
+    <tr>
+      <th id="T_39779_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_39779_row1_col0" class="data row1 col0" >CMS: Global Mangrove Canopy Height Maps Derived from TanDEM-X, 2015</td>
+      <td id="T_39779_row1_col1" class="data row1 col1" ><a target="_blank" href="https://doi.org/10.3334/ORNLDAAC/2251">10.3334/ORNLDAAC/2251</a></td>
+    </tr>
+    <tr>
+      <th id="T_39779_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_39779_row2_col0" class="data row2 col0" >LiDAR Surveys over Selected Forest Research Sites, Brazilian Amazon, 2008-2018</td>
+      <td id="T_39779_row2_col1" class="data row2 col1" ><a target="_blank" href="https://doi.org/10.3334/ORNLDAAC/1644">10.3334/ORNLDAAC/1644</a></td>
+    </tr>
+    <tr>
+      <th id="T_39779_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_39779_row3_col0" class="data row3 col0" >LiDAR and PALSAR-Derived Forest Aboveground Biomass, Paragominas, Para, Brazil, 2012</td>
+      <td id="T_39779_row3_col1" class="data row3 col1" ><a target="_blank" href="https://doi.org/10.3334/ORNLDAAC/1648">10.3334/ORNLDAAC/1648</a></td>
+    </tr>
+    <tr>
+      <th id="T_39779_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_39779_row4_col0" class="data row4 col0" >CMS: GLAS LiDAR-derived Global Estimates of  Forest Canopy Height, 2004-2008</td>
+      <td id="T_39779_row4_col1" class="data row4 col1" ><a target="_blank" href="https://doi.org/10.3334/ORNLDAAC/1271">10.3334/ORNLDAAC/1271</a></td>
+    </tr>
+    <tr>
+      <th id="T_39779_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_39779_row5_col0" class="data row5 col0" >Global Forest Aboveground Carbon Stocks and Fluxes from GEDI and ICESat-2, 2018-2021</td>
+      <td id="T_39779_row5_col1" class="data row5 col1" ><a target="_blank" href="https://doi.org/10.3334/ORNLDAAC/2180">10.3334/ORNLDAAC/2180</a></td>
+    </tr>
+    <tr>
+      <th id="T_39779_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_39779_row6_col0" class="data row6 col0" >Pantropical Forest Height and Biomass from GEDI and TanDEM-X Data Fusion</td>
+      <td id="T_39779_row6_col1" class="data row6 col1" ><a target="_blank" href="https://doi.org/10.3334/ORNLDAAC/2298">10.3334/ORNLDAAC/2298</a></td>
+    </tr>
+    <tr>
+      <th id="T_39779_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_39779_row7_col0" class="data row7 col0" >Aboveground Biomass Change for Amazon Basin, Mexico, and Pantropical Belt, 2003-2016</td>
+      <td id="T_39779_row7_col1" class="data row7 col1" ><a target="_blank" href="https://doi.org/10.3334/ORNLDAAC/1824">10.3334/ORNLDAAC/1824</a></td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>In the next tutorial, we will download the lidar dataset <a class="reference external" href="https://doi.org/10.3334/ORNLDAAC/1644">“LiDAR Surveys over Selected Forest Research Sites, Brazilian Amazon, 2008-2018”</a> and look into details.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tutorials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../prerequisites.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Requirements</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="access_lidar.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Access CMS LiDAR data</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-datasets-by-project">Search datasets by project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-extent-of-datasets">Spatial extent of datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets-by-daacs">Datasets by DAACs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets-publication-dates">Datasets publication dates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets-granule-count">Datasets granule count</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instrument-keywords-of-the-dataset">Instrument keywords of the dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-by-keyword">Search by keyword</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-by-bounding-box">Search by bounding box</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ORNL DAAC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
