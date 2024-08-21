@@ -7,9 +7,10 @@ parts:
   - caption: Prerequisites
     numbered: false
     chapters:
-    - file: prerequisites/earthdatalogin.md
-    - file: prerequisites/pythonmodules.md
-    - file: prerequisites/compute.md
+    - file: prerequisites/earthdatalogin
+    - file: prerequisites/pythonmodules
+    - file: prerequisites/compute
+    - file: prerequisites/git
 #
   - caption: Search & Discovery
     numbered: false

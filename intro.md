@@ -13,9 +13,9 @@ By connecting carbon cycle science research to stakeholders who use the data in 
 decision making, NASA CMS contributes to understanding and meeting the needs of the climate 
 data user community.
 
-There has been three phases of the CMS projects: CMS Phase I (2010-2012), CMS Phase II (2011-2016), and
+There have been three phases of the CMS projects: CMS Phase I (2010-2012), CMS Phase II (2011-2016), and
 CMS Phase III (2018-2023). Learn more about NASA CMS program at https://carbon.nasa.gov/, and 
-in the following reports {cite}`Hurtt_2014,Hurtt_2014b,Hurtt_2022`:
+in the following reports {cite}`Hurtt2014,Hurtt2014b,Hurtt2022`:
 
 ## CMS Datasets
 
@@ -32,7 +32,7 @@ archived at a NASA DAAC.
 ```
 
 ## Data Tutorials
-These data tutorials will introduce with how to search and discover CMS datasets and access and visualize the datasets using various
+These data tutorials will introduce how to search and discover CMS datasets and access and visualize the datasets using various
 data services and tools. The tutorials will also demonstrate how to integrate the CMS datasets with other 
 NASA datasets such as GEDI and ICESat-2 lidar datasets.
 
@@ -42,4 +42,5 @@ NASA datasets such as GEDI and ICESat-2 lidar datasets.
 ## References
 ```{bibliography}
 :style: plain
+:filter: docname in docnames
 ```

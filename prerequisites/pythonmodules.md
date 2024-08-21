@@ -1,8 +1,15 @@
-## Python modules
-The tutorials requires additional Python modules installed in your system. These are listed on the `requirements.txt` file within the repository. You can install the modules using `pip` or `conda` as:
+# Python Modules
+The tutorials requires additional Python modules installed in your system. These are listed on the `requirements.txt` file within the repository. You can install the modules using `pip` as:
 
 ```bash
 pip install -r requirements.txt
+```
+
+If you use `conda` environment, you can create and activate the conda environment as 
+
+```bash
+conda env create -f environment.yml
+conda activate cms
 ```
 
 The tutorials specifically uses two python modules:
