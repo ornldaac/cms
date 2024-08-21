@@ -13,3 +13,7 @@ Once installed, type the following in your terminal:
 ```bash
 jupyter lab
 ```
+
+The Jupyter notebooks can also be launched to external environments like Google's [Colab](https://colab.research.google.com/), [MyBinder](https://mybinder.org/) or other managed cloud environment like [NASA Openscape 2i2c](https://openscapes.2i2c.cloud/) using "launch buttons". The launch buttons can be accessed by clicking the rocket icon on the top-right corner of the Jupyter notebooks:
+
+![alt text](assets/launch_buttons.png)
